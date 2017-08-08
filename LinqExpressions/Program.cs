@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinqExpressions
 {
@@ -11,10 +7,10 @@ namespace LinqExpressions
     {
         static void Main(string[] args)
         {
-            Expression<Func<Students, bool>> isTeenagerExpr = s => s.Age > 12;
+            Expression<Func<Students, bool>> isTeenagerExpr = s => s.Age > 12 && s.Id == 2644;
             var isTeenager = isTeenagerExpr.Compile();
 
-            bool result = isTeenager(new Students { Age = 13 });
+            bool result = isTeenager(new Students { Age = 13, Name = "Özgür", Id = 2643 });
             Console.WriteLine(result);
         }
     }
