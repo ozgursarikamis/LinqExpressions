@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
+using Newtonsoft.Json;
 
 namespace LinqExpressions
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -11,7 +13,7 @@ namespace LinqExpressions
             var isTeenager = isTeenagerExpr.Compile();
 
             bool result = isTeenager(new Students { Age = 13, Name = "Özgür", Id = 2643 });
-            Console.WriteLine(result);
+            Console.WriteLine(result); 
         }
     }
 
